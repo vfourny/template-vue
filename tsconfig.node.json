@@ -1,5 +1,5 @@
 {
-  "extends": ["@seyrinian/seyrinian-tools/tsconfig"],
+  "extends": ["@vfourny/node-toolkit/tsconfig"],
   "compilerOptions": {
     "composite": true,
     "noEmit": true

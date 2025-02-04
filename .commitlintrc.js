@@ -1,3 +1,3 @@
 export default {
-  extends: "@seyrinian/seyrinian-tools/commitlint",
+  extends: "@vfourny/node-toolkit/commitlint",
 }
