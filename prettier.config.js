@@ -1,5 +1,5 @@
-import seyrinianToolsPrettierConfig from "@seyrinian/seyrinian-tools/prettier"
+import nodeToolkitPrettier from "@vfourny/node-toolkit/prettier"
 
 export default {
-  ...seyrinianToolsPrettierConfig,
+  ...nodeToolkitPrettier,
 }

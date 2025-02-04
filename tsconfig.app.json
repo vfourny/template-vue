@@ -1,7 +1,7 @@
 {
   "extends": [
     "@vue/tsconfig/tsconfig.dom.json",
-    "@seyrinian/seyrinian-tools/tsconfig"
+    "@vfourny/node-toolkit/tsconfig"
   ],
   "compilerOptions": {
     "composite": true,
