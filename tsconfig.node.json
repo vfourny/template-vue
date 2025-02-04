@@ -1,0 +1,8 @@
+{
+  "extends": ["@seyrinian/seyrinian-tools/tsconfig"],
+  "compilerOptions": {
+    "composite": true,
+    "noEmit": true
+  },
+  "include": ["vite.config.ts"]
+}

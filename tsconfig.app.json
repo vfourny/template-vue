@@ -1,0 +1,12 @@
+{
+  "extends": [
+    "@vue/tsconfig/tsconfig.dom.json",
+    "@seyrinian/seyrinian-tools/tsconfig"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "module": "esnext",
+    "moduleResolution": "bundler"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+}
