@@ -5,8 +5,5 @@
   ],
   "compilerOptions": {
     "composite": true,
-    "module": "esnext",
-    "moduleResolution": "bundler"
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
 }
