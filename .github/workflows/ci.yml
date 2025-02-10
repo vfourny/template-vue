@@ -1,13 +1,39 @@
 name: CI
 
 on:
-  pull_request:
+  push:
     branches:
       - main
       - next
+    workflow_dispatch:
 
 jobs:
   build:
-    uses: Seyrinian/.github/.github/workflows/build.yml@main
+    uses: vfourny/.github/.github/workflows/build.yml@main
     with:
       is_build: true
+  deploy_dev:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: Deploy to Railway
+        run: railway up --service ${{ secrets.RAILWAY_SERVICE_ID }}
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_DEPLOY_TOKEN }}
+  release:
+    needs: build
+    if: github.event_name == 'workflow_dispatch'
+    uses: vfourny/.github/.github/workflows/release.yml@main
+    with:
+      is_publish: true
+      is_build: true
+    secrets:
+      SEMANTIC_BOT_APP_ID: ${{ secrets.SEMANTIC_BOT_APP_ID }}
+      SEMANTIC_BOT_PRIVATE_KEY: ${{ secrets.SEMANTIC_BOT_PRIVATE_KEY }}
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
