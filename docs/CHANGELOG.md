@@ -1,3 +1,13 @@
+## [1.0.2](https://github.com/vfourny/template-vue/compare/v1.0.1...v1.0.2) (2025-02-10)
+
+
+### Bug Fixes
+
+* add railway ([#7](https://github.com/vfourny/template-vue/issues/7)) ([c72a7c0](https://github.com/vfourny/template-vue/commit/c72a7c05d643e36e57ddfd805453322104ccabe8))
+* rules ci ([#8](https://github.com/vfourny/template-vue/issues/8)) ([74c9873](https://github.com/vfourny/template-vue/commit/74c9873ea0a40ad5f0ba09c083426d8de94b63dd))
+* update ci ([#5](https://github.com/vfourny/template-vue/issues/5)) ([7889d3f](https://github.com/vfourny/template-vue/commit/7889d3f6ea9a4bb7a2d2a2cfd18746c37ed54b75))
+* update ci on railway ([#6](https://github.com/vfourny/template-vue/issues/6)) ([1650b6c](https://github.com/vfourny/template-vue/commit/1650b6cedb0ab488133b43d1105d3c29a8a474a0))
+
 ## [1.0.1](https://github.com/vfourny/template-vue/compare/v1.0.0...v1.0.1) (2025-02-05)
 
 
