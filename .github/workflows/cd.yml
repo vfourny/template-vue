@@ -17,7 +17,7 @@ jobs:
       RAILWAY_DEPLOY_TOKEN: ${{ secrets.RAILWAY_DEPLOY_TOKEN }}
       RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
   deploy_prod:
-    needs: build
+    needs: deploy_staging
     uses: vfourny/.github/.github/workflows/deploy_railway.yml@main
     secrets:
       RAILWAY_DEPLOY_TOKEN: ${{ secrets.RAILWAY_DEPLOY_TOKEN }}
