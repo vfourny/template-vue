@@ -10,3 +10,13 @@ jobs:
     uses: vfourny/.github/.github/workflows/build.yml@main
     with:
       is_build: true
+  deploy_staging:
+    needs: build
+    uses: vfourny/.github/.github/workflows/deploy_railway.yml@main
+    with:
+      railway_deploy_token: ${{ secrets.RAILWAY_DEPLOY_TOKEN }}
+  deploy_prod:
+    needs: deploy_staging
+    uses: vfourny/.github/.github/workflows/deploy_railway.yml@main
+    with:
+      railway_deploy_token: ${{ secrets.RAILWAY_DEPLOY_TOKEN }}

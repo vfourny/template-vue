@@ -14,20 +14,11 @@ jobs:
       is_build: true
   deploy_dev:
     needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Install Railway CLI
-        run: npm install -g @railway/cli
-
-      - name: Deploy to Railway
-        run: railway up --service ${{ secrets.RAILWAY_SERVICE_ID }}
-        env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_DEPLOY_TOKEN }}
+    uses: vfourny/.github/.github/workflows/deploy_railway.yml@main
+    with:
+      railway_deploy_token: ${{ secrets.RAILWAY_DEPLOY_TOKEN }}
   release:
-    needs: build
+    needs: [build, deploy_dev]
     if: github.event_name == 'workflow_dispatch'
     uses: vfourny/.github/.github/workflows/release.yml@main
     with:
