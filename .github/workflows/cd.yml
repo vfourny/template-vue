@@ -24,10 +24,10 @@ jobs:
   release:
     needs: deploy_staging
     uses: vfourny/.github/.github/workflows/release.yml@main
-    environment: staging
     with:
       is_publish: true
       is_build: true
+      environment: staging
     secrets:
       SEMANTIC_BOT_APP_ID: ${{ secrets.SEMANTIC_BOT_APP_ID }}
       SEMANTIC_BOT_PRIVATE_KEY: ${{ secrets.SEMANTIC_BOT_PRIVATE_KEY }}
