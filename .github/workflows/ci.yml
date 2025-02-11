@@ -14,16 +14,8 @@ jobs:
   deploy_dev:
     needs: build
     uses: vfourny/.github/.github/workflows/deploy_railway.yml@main
+    environment: development
     secrets:
         RAILWAY_DEPLOY_TOKEN: ${{ secrets.RAILWAY_DEPLOY_TOKEN }}
         RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
-  release:
-    needs: [build, deploy_dev]
-    uses: vfourny/.github/.github/workflows/release.yml@main
-    with:
-      is_publish: true
-      is_build: true
-    secrets:
-      SEMANTIC_BOT_APP_ID: ${{ secrets.SEMANTIC_BOT_APP_ID }}
-      SEMANTIC_BOT_PRIVATE_KEY: ${{ secrets.SEMANTIC_BOT_PRIVATE_KEY }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
