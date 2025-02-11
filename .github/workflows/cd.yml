@@ -11,13 +11,16 @@ jobs:
     uses: vfourny/.github/.github/workflows/build.yml@main
     with:
       is_build: true
+
   deploy_staging:
     needs: build
     uses: vfourny/.github/.github/workflows/deploy_railway.yml@main
-    environment: staging
+    with:
+      environment: staging
     secrets:
       RAILWAY_DEPLOY_TOKEN: ${{ secrets.RAILWAY_DEPLOY_TOKEN }}
       RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
+
   release:
     needs: deploy_staging
     uses: vfourny/.github/.github/workflows/release.yml@main
@@ -29,10 +32,12 @@ jobs:
       SEMANTIC_BOT_APP_ID: ${{ secrets.SEMANTIC_BOT_APP_ID }}
       SEMANTIC_BOT_PRIVATE_KEY: ${{ secrets.SEMANTIC_BOT_PRIVATE_KEY }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
   deploy_prod:
     needs: release
     uses: vfourny/.github/.github/workflows/deploy_railway.yml@main
-    environment: production
+    with:
+      environment: production
     secrets:
       RAILWAY_DEPLOY_TOKEN: ${{ secrets.RAILWAY_DEPLOY_TOKEN }}
       RAILWAY_SERVICE_ID: ${{ secrets.RAILWAY_SERVICE_ID }}
