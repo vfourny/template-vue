@@ -1,3 +1,11 @@
+## [1.0.3](https://github.com/vfourny/template-vue/compare/v1.0.2...v1.0.3) (2025-02-11)
+
+
+### Bug Fixes
+
+* update ci ([#11](https://github.com/vfourny/template-vue/issues/11)) ([bcb76af](https://github.com/vfourny/template-vue/commit/bcb76af2c09ab456d4b3ce3e4a92b136bb7453de))
+* update ci ([#12](https://github.com/vfourny/template-vue/issues/12)) ([07b66ad](https://github.com/vfourny/template-vue/commit/07b66ad8550a5a34e8abd675ec7bae4b76769b1a))
+
 ## [1.0.2](https://github.com/vfourny/template-vue/compare/v1.0.1...v1.0.2) (2025-02-10)
 
 
